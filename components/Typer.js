@@ -7,21 +7,7 @@ export const Typer = (props) => {
     const [w,setW] = useState(0)    
     const [curr,setCurr] = useState(array[0])
     const [r,setR] = useState(curr.length-1)
-    var i = 0
-     
-    //const curr = props.array[0].toString()
-    var base = ''
-    var new_word = []
-    var newWord = []
-    const type =(word)=> {
-        c=0;
         
-        while(c<word.length){
-                        
-            c++
-            setTimeout(()=>{newWord.push(word.charAt(c));setWord(newWord.join(','))},500)
-        }
-    }
     useEffect(()=>{
         //console.log(curr)
         //console.log(`Length: ${curr.length}`)
@@ -62,8 +48,8 @@ export const Typer = (props) => {
     },[r])
     
     return (<div className='flex flex-row'>
-    <div className='flex flex-col align-middle'>{props.children} {word}</div>
-    
+    <div className='flex flex-col align-middle'>{props.children}</div>
+    <div className='flex flex-col align-middle'>&nbsp;{word.toString()}</div>
 {/*     
         {word}<br/>
         <br/>{`c: `+c}
